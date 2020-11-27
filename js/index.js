@@ -13,7 +13,7 @@ const modalContent = `
 
 const modalButtons = [
   {
-    text: 'Ok',
+    text: 'OK',
     type: 'ok',
     handler() {
       handlerForBtnOk();
