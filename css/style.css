@@ -1,0 +1,199 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  word-wrap: normal;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal.modal--open .modal__overlay,
+.modal.modal--open .modal__window {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.modal.modal--hide .modal__overlay,
+.modal.modal--hide .modal__window {
+  z-index: 1000;
+  animation-name: hide;
+  animation-duration: 0.3s;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal.modal--open .modal__window {
+  transform: scale(1);
+}
+
+.modal.modal--open .modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.modal--hide .modal__window {
+  transform: scale(1.2);
+}
+
+.modal.modal--hide .modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__btn {
+  display: block;
+  min-width: 110px;
+  padding: 7px 14px;
+  text-decoration: none;
+  color: white;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: #fdbe33 #000 #d77206;
+  border-radius: 4px;
+  background: linear-gradient(#f3ae0f, #e38916) #e38916;
+  transition: 0.2s;
+}
+
+.modal__btn:hover {
+  background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+
+.modal__btn:active {
+  background: linear-gradient(#f59500, #f5ae00) #f59500;
+}
+
+.modal__btn--open {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.modal__window {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  transform: scale(1.2);
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.modal__overlay,
+.modal__window {
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal__title {
+  font-size: 20px;
+}
+
+.modal__close {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal__close:hover {
+  transform: scale(1.1);
+}
+
+.modal__body {
+  padding: 16px 20px;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 16px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
